@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Maya Chen",
+    "email": "maya.chen@example.com",
+    "department": "Engineering",
+    "position": "Senior Software Engineer",
+    "salary": 118000,
+    "location": "Seattle, WA"
+  },
+  {
+    "id": 2,
+    "name": "Andre Lewis",
+    "email": "andre.lewis@example.com",
+    "department": "People",
+    "position": "People Operations Manager",
+    "salary": 96000,
+    "location": "Brooklyn, NY"
+  },
+  {
+    "id": 3,
+    "name": "Priya Nair",
+    "email": "priya.nair@example.com",
+    "department": "Design",
+    "position": "Product Designer",
+    "salary": 102000,
+    "location": "Portland, OR"
+  },
+  {
+    "id": 4,
+    "name": "Jordan Brooks",
+    "email": "jordan.brooks@example.com",
+    "department": "Engineering",
+    "position": "Platform Engineer",
+    "salary": 124000,
+    "location": "Austin, TX"
+  },
+  {
+    "id": 5,
+    "name": "Elena Garcia",
+    "email": "elena.garcia@example.com",
+    "department": "Finance",
+    "position": "Financial Analyst",
+    "salary": 89000,
+    "location": "Chicago, IL"
+  },
+  {
+    "id": 6,
+    "name": "Noah Williams",
+    "email": "noah.williams@example.com",
+    "department": "Sales",
+    "position": "Account Executive",
+    "salary": 92000,
+    "location": "Denver, CO"
+  },
+  {
+    "id": 7,
+    "name": "Amara Okafor",
+    "email": "amara.okafor@example.com",
+    "department": "Marketing",
+    "position": "Content Strategist",
+    "salary": 85000,
+    "location": "Atlanta, GA"
+  },
+  {
+    "id": 8,
+    "name": "Leo Martin",
+    "email": "leo.martin@example.com",
+    "department": "Engineering",
+    "position": "Quality Engineer",
+    "salary": 99000,
+    "location": "Boston, MA"
+  },
+  {
+    "id": 9,
+    "name": "Sofia Patel",
+    "email": "sofia.patel@example.com",
+    "department": "Customer Success",
+    "position": "Customer Success Lead",
+    "salary": 94000,
+    "location": "San Diego, CA"
+  },
+  {
+    "id": 10,
+    "name": "Ethan Kim",
+    "email": "ethan.kim@example.com",
+    "department": "Operations",
+    "position": "Operations Coordinator",
+    "salary": 78000,
+    "location": "Minneapolis, MN"
+  },
+  {
+    "id": 11,
+    "name": "Olivia Reed",
+    "email": "olivia.reed@example.com",
+    "department": "Design",
+    "position": "UX Researcher",
+    "salary": 98000,
+    "location": "Philadelphia, PA"
+  },
+  {
+    "id": 12,
+    "name": "Gabriel Torres",
+    "email": "gabriel.torres@example.com",
+    "department": "Sales",
+    "position": "Sales Development Representative",
+    "salary": 72000,
+    "location": "Miami, FL"
+  }
+]

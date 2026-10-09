@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <title>People Desk | Employee Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" aria-label="People Desk home">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span class="brand-copy"><strong>people desk</strong><small>TEAM DIRECTORY</small></span>
+      </a>
+      <p class="nav-caption">WORKSPACE</p>
+      <a class="nav-link active" href="#dashboard" aria-current="page">
+        <span class="nav-glyph" aria-hidden="true">▦</span> Overview
+      </a>
+      <a class="nav-link" href="#employees">
+        <span class="nav-glyph" aria-hidden="true">◉</span> Employees
+      </a>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span class="status-dot"></span><span>Directory is up to date</span></div>
+        <span class="sidebar-version">DAY 05 PROJECT</span>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Workspace</span><span aria-hidden="true">/</span><strong>People</strong></div>
+        <div class="profile-chip"><span class="profile-avatar" aria-hidden="true">HR</span><span>People team</span></div>
+      </header>
+
+      <section class="page-heading" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">PEOPLE OPERATIONS <span class="eyebrow-rule"></span> 2026</p>
+          <h1 id="page-title">Employee directory</h1>
+          <p class="page-subtitle">A clear view of the people behind the work.</p>
+        </div>
+        <button class="button button-primary" id="add-employee-button" type="button"><span aria-hidden="true">+</span> Add employee</button>
+      </section>
+
+      <section class="stats-grid" aria-label="Employee statistics">
+        <article class="stat-panel stat-total">
+          <div class="stat-top"><span>Total employees</span><span class="stat-symbol" aria-hidden="true">↗</span></div>
+          <strong class="stat-value" id="total-employees">--</strong>
+          <span class="stat-footnote">Across the organization</span>
+        </article>
+        <article class="stat-panel stat-departments">
+          <div class="stat-top"><span>Departments</span><span class="stat-symbol" aria-hidden="true">◫</span></div>
+          <strong class="stat-value" id="total-departments">--</strong>
+          <span class="stat-footnote">Distinct teams</span>
+        </article>
+        <article class="stat-panel stat-salary">
+          <div class="stat-top"><span>Average salary</span><span class="stat-symbol" aria-hidden="true">$</span></div>
+          <strong class="stat-value" id="average-salary">--</strong>
+          <span class="stat-footnote">Annual, before tax</span>
+        </article>
+      </section>
+
+      <section class="directory-section" id="employees" aria-labelledby="directory-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-title-row"><h2 id="directory-title">People</h2><span class="result-count" id="result-count">0</span></div>
+            <p>Search, sort, and manage your team.</p>
+          </div>
+          <button class="button button-secondary add-inline" id="add-employee-inline" type="button"><span aria-hidden="true">+</span> Add employee</button>
+        </div>
+
+        <div class="toolbar" aria-label="Employee list controls">
+          <label class="search-field">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Search employees by name, email, or department</span>
+            <input id="employee-search" type="search" placeholder="Search name, email, department..." autocomplete="off">
+            <kbd> / </kbd>
+          </label>
+          <label class="select-control"><span class="visually-hidden">Filter by department</span>
+            <select id="department-filter"><option value="">All departments</option></select>
+          </label>
+          <label class="select-control sort-control"><span class="visually-hidden">Sort employees by</span>
+            <select id="sort-by">
+              <option value="name">Sort: Name</option>
+              <option value="salary">Sort: Salary</option>
+              <option value="department">Sort: Department</option>
+            </select>
+          </label>
+          <label class="select-control direction-control"><span class="visually-hidden">Sort direction</span>
+            <select id="sort-direction" aria-label="Sort direction">
+              <option value="asc">A to Z / Low to high</option>
+              <option value="desc">Z to A / High to low</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="table-frame">
+          <div class="table-scroll" tabindex="0" aria-label="Scrollable employee table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">EMPLOYEE</th>
+                  <th scope="col">DEPARTMENT</th>
+                  <th scope="col">POSITION</th>
+                  <th scope="col">LOCATION</th>
+                  <th scope="col" class="salary-column">SALARY</th>
+                  <th scope="col" class="actions-heading"><span class="visually-hidden">Actions</span></th>
+                </tr>
+              </thead>
+              <tbody id="employee-table-body">
+                <tr><td class="table-message" colspan="6">Loading employee directory...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer"><span id="table-summary">Loading records</span><span class="table-footer-mark">PEOPLE DESK <span aria-hidden="true">·</span> DIRECTORY</span></div>
+        </div>
+      </section>
+      <footer class="page-footer"><span>People Desk</span><span>Keep your team in the know.</span></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog class="app-dialog" id="employee-dialog" aria-labelledby="employee-dialog-title">
+    <form id="employee-form" novalidate>
+      <div class="dialog-heading">
+        <div><p class="eyebrow">DIRECTORY RECORD</p><h2 id="employee-dialog-title">Add employee</h2></div>
+        <button class="icon-button" type="button" data-close-dialog="employee-dialog" aria-label="Close form">×</button>
+      </div>
+      <p class="dialog-intro">Add the details below to update the team directory.</p>
+      <input id="employee-id" type="hidden">
+      <div class="form-grid">
+        <label class="form-field field-wide">Full name<input id="employee-name" name="name" type="text" autocomplete="name" maxlength="80" required></label>
+        <label class="form-field field-wide">Work email<input id="employee-email" name="email" type="email" autocomplete="email" maxlength="120" required></label>
+        <label class="form-field">Department<input id="employee-department" name="department" type="text" maxlength="60" required></label>
+        <label class="form-field">Position<input id="employee-position" name="position" type="text" maxlength="80" required></label>
+        <label class="form-field">Annual salary (USD)<input id="employee-salary" name="salary" type="number" min="1" step="1" inputmode="numeric" required></label>
+        <label class="form-field">Location<input id="employee-location" name="location" type="text" maxlength="80" required></label>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button class="button button-secondary" type="button" data-close-dialog="employee-dialog">Cancel</button><button class="button button-primary" id="save-employee-button" type="submit">Save employee</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog details-dialog" id="details-dialog" aria-labelledby="details-dialog-title">
+    <div class="dialog-heading">
+      <div><p class="eyebrow">EMPLOYEE PROFILE</p><h2 id="details-dialog-title">Employee details</h2></div>
+      <button class="icon-button" type="button" data-close-dialog="details-dialog" aria-label="Close employee details">×</button>
+    </div>
+    <div id="employee-details-content"></div>
+    <div class="dialog-actions"><button class="button button-secondary" type="button" data-close-dialog="details-dialog">Done</button></div>
+  </dialog>
+</body>
+</html>
